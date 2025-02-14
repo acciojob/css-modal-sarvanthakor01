@@ -1,19 +1,15 @@
-/*  your css code here. If applicable */
-/* General Styles */
+/* Basic Styles */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Button */
+/* Button Styling */
 #openModal {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007BFF;
+    background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
@@ -24,29 +20,26 @@ body {
     background-color: #0056b3;
 }
 
-/* Modal */
+/* Modal Background */
 .modal {
-    display: none; /* Hide modal by default */
+    display: none; /* Initially hidden */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
     justify-content: center;
     align-items: center;
 }
 
-.modal.show {
-    display: block; /* Ensure modal is visible when 'show' class is added */
-}
-/* Modal Content */
+/* Modal Content Box */
 .modal-content {
     background: white;
+    width: 400px;
     padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Modal Header */
@@ -54,17 +47,31 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
 }
 
+.modal-header h2 {
+    margin: 0;
+}
+
+/* Close Button */
 .close-modal {
     font-size: 24px;
     cursor: pointer;
-    font-weight: bold;
+    color: red;
+}
+
+.close-modal:hover {
+    color: darkred;
 }
 
 /* Modal Body */
 .modal-body {
-    padding-top: 10px;
+    padding: 15px 0;
+}
+
+/* Show Modal */
+.modal.show {
+    display: flex; /* Ensures Cypress expects 'flex' */
 }
